@@ -68,6 +68,19 @@
           <i class="iconfont icon-updatetime mr-10" title="<%= __('updateTime') %>"></i>
           <%- page.updated.format("YYYY-MM-DD HH:mm:ss") %>
         </span>
+        <% if (theme.wordCount && theme.wordCount.enable) { %>
+          <span class="post-wordcount">
+            <i class="iconfont icon-file-text mr-10" title="字数统计"></i>
+            <span class="word-count"><%= wordcount(page.content) %> 字</span>
+            <span class="reading-time">· <%= min2read(page.content) %> 分钟</span>
+          </span>
+        <% } %>
+        <% if (theme.footer.views && theme.footer.views.enable) { %>
+          <span class="post-views">
+            <i class="iconfont icon-eye mr-10" title="阅读量"></i>
+            <span id="busuanzi_value_page_pv"></span> 次
+          </span>
+        <% } %>
         <% for(item of theme.navbar) {
           if (item.key === 'tags' && item.enable) {
             if(page.tags && page.tags.length > 0) { %>

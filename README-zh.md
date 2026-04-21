@@ -449,6 +449,50 @@ lazyload:
 
 </details>
 
+<details>
+  <summary><b>文章字数统计与阅读时长</b> (click to show)</summary>
+
+  在配置文件`_config.oranges.yml`中添加或修改`wordCount`字段：
+
+  ```yml
+  wordCount:
+    enable: true
+    wordsPerMinute: 300  # 每分钟阅读字数，默认300
+  ```
+
+  启用后，文章页面会显示字数统计和预计阅读时长。
+
+</details>
+
+<details>
+  <summary><b>页面访问量统计</b> (click to show)</summary>
+
+  在配置文件`_config.oranges.yml`中修改`footer.views`字段：
+
+  ```yml
+  footer:
+    views:
+      enable: true
+      provider: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
+      item:
+        -
+          enable: true
+          id: busuanzi_value_site_pv
+          name: 总访问量
+          unit: 次
+        -
+          enable: true
+          id: busuanzi_value_site_uv
+          name: 访客数
+          unit: 人
+  ```
+
+  启用后：
+  - 页脚会显示站点总访问量和访客数
+  - 文章页面会显示单篇文章的阅读量
+
+</details>
+
 ## To Do List
 
 - [x] 自定义导航，可灵活配置自己想要的导航✔
@@ -461,8 +505,8 @@ lazyload:
 - [x] 文章标题锚点`[2020.5.3]`✔
 - [x] 评论系统`[2020.5.7]`✔
 - [x] 分享功能`[2021.8.22]`✔
-- [ ] 文章字数统计
-- [ ] 页面访问量统计
+- [x] 文章字数统计`[2026.4.21]`✔
+- [x] 页面访问量统计`[2026.4.21]`✔
 - [x] Google 分析`[2020.5.8]`✔
 - [x] 文章加密`[2022.3.23]`✔
 - [x] 文章置顶`[2020.9.1]`✔
